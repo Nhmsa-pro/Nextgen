@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-primary: #0f172a;
+  --brand-secondary: #1d4ed8;
+  --brand-accent: #f59e0b;
+  --surface-page: #f8fafc;
+  --surface-card: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #475569;
+  --status-success: #15803d;
+  --status-warning: #b45309;
+  --status-danger: #b91c1c;
+  --status-info: #2563eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Segoe UI', Poppins, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.2;
+}
+
+main {
+  width: 100%;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl;
+  }
+}
