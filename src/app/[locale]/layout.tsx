@@ -1,20 +1,26 @@
 import type { Metadata } from 'next';
-import { locales, type Locale } from '@/lib/i18n';
+import { notFound } from 'next/navigation';
+import { SiteHeader } from '@/components/layout/site-header';
+import { SiteFooter } from '@/components/layout/site-footer';
+import type { Locale } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: 'NHMSA | Localized Layout',
+  title: 'NHMSA',
+  description: 'Bilingual public website foundation for NHMSA.',
 };
 
 export default function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
   const locale = params.locale as Locale;
 
-  if (!locales.includes(locale)) {
-    return null;
+  if (!['en', 'so'].includes(locale)) {
+    notFound();
   }
 
   return (
     <div lang={locale} className="min-h-screen">
-      {children}
+      <SiteHeader locale={locale} />
+      <main>{children}</main>
+      <SiteFooter locale={locale} />
     </div>
   );
 }
