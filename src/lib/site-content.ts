@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export const locales = ['en', 'so'] as const;
 
 export type Locale = (typeof locales)[number];
@@ -273,8 +271,4 @@ export function getLocalizedNav(locale: Locale) {
 
 export function getLocaleHref(locale: Locale, path: string) {
   return `/${locale}${path.startsWith('/') ? path : `/${path}`}`;
-}
-
-export function LocaleLink({ locale, href, children, className = '' }: { locale: Locale; href: string; children: React.ReactNode; className?: string }) {
-  return <Link href={getLocaleHref(locale, href)} className={className}>{children}</Link>;
 }
