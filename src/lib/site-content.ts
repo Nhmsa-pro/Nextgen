@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const locales = ['en', 'so'] as const;
 
 export type Locale = (typeof locales)[number];

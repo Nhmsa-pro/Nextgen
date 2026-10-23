@@ -17,7 +17,7 @@ export default function LocaleLayout({ children, params }: { children: React.Rea
   }
 
   return (
-    <div lang={locale} className="min-h-screen">
+    <div lang={locale} className="min-h-screen bg-slate-50 text-slate-900">
       <SiteHeader locale={locale} />
       <main>{children}</main>
       <SiteFooter locale={locale} />
