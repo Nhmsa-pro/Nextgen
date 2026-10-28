@@ -6,7 +6,7 @@ import type { Locale } from '@/lib/site-content';
 
 export const metadata: Metadata = {
   title: 'NHMSA',
-  description: 'Bilingual public website foundation for NHMSA.',
+  description: 'Bilingual public website for NHMSA, including course information, academy details, and admission guidance.',
 };
 
 export default function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
